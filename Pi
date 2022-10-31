@@ -1,0 +1,40 @@
+using System;
+
+namespace Pi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            decimal[] Pi = new decimal[2000000000];
+            long s = 0;
+            bool Door = false;
+            decimal[] Result = new decimal[1];
+
+            for (decimal i = 1; i < 2000000000; i += 2) // Dividing 2000000000
+            {
+                s++;
+                Pi[s] = 1 / i;
+
+                if (Door == false)
+                {
+                    Result[0] = Result[0] - Pi[s];
+                    Door = true;
+                }
+                else
+                {
+                    Result[0] = Result[0] + Pi[s];
+                    Door = false;
+                }
+
+                // Displays each fraction one by one. (On/Off)
+                Console.WriteLine(Pi[s]); 
+            }
+
+            Console.WriteLine("Result: " + -4 * Result[0]);
+            Console.WriteLine("   Pi: " + Math.PI);
+            Console.ReadLine();
+
+        }
+    }
+}
