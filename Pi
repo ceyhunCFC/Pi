@@ -11,7 +11,7 @@ namespace Pi
             bool Door = false;
             decimal[] Result = new decimal[1];
 
-            for (decimal i = 1; i < 2000000000; i += 2) // Dividing 2000000000
+            for (decimal i = 1; i < 2000000000; i += 2) // fraction 2000000000 times
             {
                 s++;
                 Pi[s] = 1 / i;
